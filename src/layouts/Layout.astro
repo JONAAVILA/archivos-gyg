@@ -14,7 +14,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/logo-archivos-gyg.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -38,6 +38,12 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+	}
+	:root::-webkit-scrollbar{
+		width: 5px;
+	}
+	:root::-webkit-scrollbar-thumb{
+		background: #425336;
 	}
 	footer{
 		display: flex;
@@ -63,6 +69,7 @@ const { title } = Astro.props;
 		color: #536942;
 		background: #13151a;
 		background-size: 224px;
+		font-display: wrap;
 	}
 	h1{
 		font-size: 6.5rem;
@@ -76,12 +83,14 @@ const { title } = Astro.props;
 		font-family: "Roboto", sans-serif;
 		font-size: 1rem;
 		font-weight: 300;
+		font-display: wrap;
 	}
 	p{
 		font-family: "Roboto", sans-serif;
 		font-size: .9rem;
 		font-weight: 300;
 		text-wrap:pretty;
+		font-display: wrap;
 	}
 	button{
 		font-family: "Roboto", sans-serif;
@@ -90,6 +99,7 @@ const { title } = Astro.props;
 		border: none;
 		border-radius: 3px;
 		font-size: .8rem;
+		font-display: wrap;
 	}
 	span{
         height: 3px;
