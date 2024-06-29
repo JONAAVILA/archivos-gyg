@@ -12,11 +12,24 @@
 
 <style>
     section{
-        padding-top: 60px;
         display: grid;
         justify-content: center;
+        align-items: center;
+        margin-top: -100px;
         width: 100%;
+        height: 100vh;
         color: #ffff;
+        background-image: url('../../archivos-gyg.gif');
+        background-attachment: fixed;
+        background-position: bottom;
+    }
+    section::after{
+        z-index: 2;
+        content: ' ';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color:#4b4b4b4b;
     }
     a{  
         display: flex;
@@ -36,6 +49,8 @@
         background-color: #425336;
     }
     .box_landing{
+        position: relative;
+        z-index: 3;
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -3,36 +3,67 @@
 
 <section>
     <div>
-        <img src='./../../logo-archivos-gyg.webp'>
+        <img src='./../../logo-archivos-gyg.webp' alt="logo-archivos-gyg" >
     </div>
     <div class="button_nav" >
-        <a href="/" >Home</a>
-        <a href="/contacto" >Contact</a>
-        <button>+54 9 11 6230-9102</button>
+        <a href="/"
+           aria-label="Ir Home"
+           >
+           Home
+        </a>
+        <a href="/contacto"
+           aria-label="Ir Contacto"
+           >
+           Contact
+        </a>
+        <a class="whatsapp"
+           href="https://wa.link/m8iz7o"
+           target="_blank"
+           rel="noreferrer"
+           aria-label="Contáctanos por Whatsapp"
+           >
+           +54 9 11 6230-9102
+        </a>
     </div>
 </section>
+
 <style>
     section{
+        position: relative;
+        z-index: 3;
         display: flex;
         justify-content: space-between;
         padding-left: 5rem;
         padding-right: 5rem;
         align-items: center;
         height: 100px;
+        background-color: transparent;
     }
     .button_nav{
         display: flex;
         align-items: center;
         a{
-            color: #ffff;
+            font-weight: 600;
             margin-inline: 10px;
         }
-        button{
+        .whatsapp{
+            display: grid;
+            align-content: center;
+            justify-content: center;
             color: #425336;
             background-color: #ffffff8c;
             border: solid 1px #ffff;
+            border-radius: 5px;
             margin-left: 20px;
+            height: 38px;
+            width: 170px;
+            font-weight: 600;
+            transition: all ease 200ms;
         }
+    }
+    .whatsapp:hover{
+        color: #ffff;
+        background-color: #fcb900;
     }
     img{
         height: 90px;

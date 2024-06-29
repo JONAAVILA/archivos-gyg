@@ -25,7 +25,7 @@ const { title } = Astro.props;
 		<Navbar/>
 		<slot />
 	</body>
-	<footer>Copyright © 2024 Archivos GyG |<a href="./PrivacyPolicies">Políticas de Privacidad</a>| Powered by Jonatan Avila Diseño Web</footer>
+	<footer>Copyright © 2024 Archivos GyG |<a href="./PrivacyPolicies">Políticas de Privacidad</a>| Powered by Jonatan Avila Diseño - Desarrollo Web</footer>
 </html>
 <style is:global>
 	:root {
@@ -45,6 +45,9 @@ const { title } = Astro.props;
 	}
 	:root::-webkit-scrollbar-thumb{
 		background: #425336;
+	}
+	body{
+		margin: 0;
 	}
 	footer{
 		display: flex;
@@ -91,15 +94,6 @@ const { title } = Astro.props;
 		font-size: .9rem;
 		font-weight: 300;
 		text-wrap:pretty;
-		font-display: wrap;
-	}
-	button{
-		font-family: "Roboto", sans-serif;
-		width: 150px;
-		height: 40px;
-		border: none;
-		border-radius: 3px;
-		font-size: .8rem;
 		font-display: wrap;
 	}
 	span{

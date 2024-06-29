@@ -1,22 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Form from "../components/Form.astro";
 ---
 <Layout title="Contacto" >
     <section>
         <aside>
             <h2>Podés encontrarnos</h2>
         </aside>
-        <form action="">
-            <h2>Hablemos!</h2>
-            <label for="name">Nombre y Apellido</label>
-            <input type="text">
-            <label for="phone">Telefono</label>
-            <input type="text">
-            <label for="email">E-mail</label>
-            <input type="text">
-            <label for="message">Mensaje</label>
-            <textarea />
-        </form>
+        <Form/>
     </section>
 </Layout>
 
@@ -32,12 +23,5 @@ import Layout from "../layouts/Layout.astro";
         padding-inline: 10px;
         width: 30%;
         height: 100%;
-    }
-    form{
-        display:flex;
-        flex-direction: column;
-        width: 30%;
-        padding-inline: 10px;
-        padding-bottom: 40px;
     }
 </style>
