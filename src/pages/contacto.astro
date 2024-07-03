@@ -1,19 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Form from "../components/Form.astro";
+import Form from "../components/Form/Form";
+
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID
+const USER_ID = import.meta.env.VITE_USER_ID
+
 ---
 <Layout title="Contacto" >
     <section>
         <aside>
             <h2>Podés encontrarnos</h2>
         </aside>
-        <Form/>
+        <Form client:only
+              servisId={SERVICE_ID}
+              templateId={TEMPLATE_ID} 
+              userId={USER_ID} 
+              />
     </section>
 </Layout>
 
 <style>
     section{
-        display: flex;
+        display: flex;  
         justify-content: center;
         height: 75vh;
     }
