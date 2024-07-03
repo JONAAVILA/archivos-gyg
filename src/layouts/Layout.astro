@@ -25,7 +25,23 @@ const { title } = Astro.props;
 		<Navbar/>
 		<slot />
 	</body>
-	<footer>Copyright © 2024 Archivos GyG |<a href="./PrivacyPolicies">Políticas de Privacidad</a>| Powered by Jonatan Avila Diseño - Desarrollo Web</footer>
+	<footer>
+		Copyright © 2024 Archivos GyG |
+		<a href="./PrivacyPolicies"
+		   target="_blank"
+		   rel="noreferrer"
+		   aria-label="Política de privacidad"	
+		   >
+		   Políticas de Privacidad
+		</a>| Powered by 
+		<a href="https://wa.link/antkm3"
+		   target="_blank" 
+		   rel="noreferrer" 
+		   aria-label="Contactanos por whatsapp" 
+		   >
+		   Jonatan Avila Diseño - Desarrollo Web
+		</a>
+	</footer>
 </html>
 <style is:global>
 	:root {
