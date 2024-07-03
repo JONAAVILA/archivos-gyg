@@ -1,7 +1,7 @@
 import emailjs from 'emailjs-com';
 import { useState } from 'react'
 import validate from './validate'
-
+import './Form.css';
 
 export default function Form({servisId,templateId,userId}){
 
@@ -12,7 +12,7 @@ export default function Form({servisId,templateId,userId}){
         name: '',
         surname:'',
         email:'',
-        country:'',
+        phone:'',
         message:''
     })
 
@@ -43,10 +43,10 @@ export default function Form({servisId,templateId,userId}){
                 email:value
             }))
         }
-        if(id === 'country' && validateError){
+        if(id === 'phone' && validateError){
             setInputValue(prevSetInputValue => ({
                 ...prevSetInputValue,
-                country:value
+                phone:value
             }))
         }
         if(id === 'message' && validateError){
@@ -77,17 +77,18 @@ export default function Form({servisId,templateId,userId}){
                 templateParams,
                 userId
             ).then((response) => {
-              console.log('SUCCESS!', response.status, response.text)
-              setAlert('📧 Tu consulta se envió con exito ❤️ No olvides de revisar tu casilla de span 😉')
+              if(response.status === 200){
+                  setAlert('📧 Tu consulta se envió con exito!.. No olvides de revisar tu casilla de span 😉')
+              }
             }).catch((error) => {
-              console.error('FAILED...', error)
+                  setAlert('Algo salió mal ⚠️')
             })
 
             setInputValue({
                 name: '',
                 surname:'',
                 email:'',
-                country:'',
+                phone:'',
                 message:''
             })
         }else setAlert('Se requieren todos los campos o son inválidos')
@@ -98,12 +99,26 @@ export default function Form({servisId,templateId,userId}){
     }
 
     return(
-        <div className='container_form '>
+        <div>
+            <h2>Consultas</h2>
             {alert && <div className='alert' >
                         <p>{alert}</p>
+                        <svg onClick={handleClose}
+                             width="24"  
+                             height="24"  
+                             viewBox="0 0 24 24"  
+                             fill="none"  
+                             stroke="currentColor"  
+                             stroke-width="2"  
+                             stroke-linecap="round" 
+                             stroke-linejoin="round"  
+                             >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M18 6l-12 12" />
+                            <path d="M6 6l12 12" />
+                        </svg>
                       </div>}
             <form className='form'>
-                <h2>Consultas</h2>
                 <label htmlFor="prueba" style={{display:'none'}} >prueba</label>
                 <input type="text" 
                        id='prueba'
@@ -135,11 +150,11 @@ export default function Form({servisId,templateId,userId}){
                        required
                        />
                 {errors && <p>{errors.email}</p>}
-                <label htmlFor="country">País</label>
-                <input id='country' 
-                       value={inputValue.country}
+                <label htmlFor="phone">Teléfono</label>
+                <input id='phone' 
+                       value={inputValue.phone}
                        onChange={handleInputValue} 
-                       type="text" 
+                       type='text' 
                        required
                        />
                 {errors && <p>{errors.country}</p>}
@@ -150,7 +165,7 @@ export default function Form({servisId,templateId,userId}){
                 </textarea>
                 {errors && <p>{errors.message}</p>}
                 <div className='box_button' >
-                    <button onClick={handleSubmit} >Enviar </button>
+                    <button onClick={handleSubmit} >ENVIAR </button>
                 </div>
             </form>
         </div>
