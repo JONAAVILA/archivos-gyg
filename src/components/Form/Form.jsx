@@ -68,7 +68,7 @@ export default function Form({servisId,templateId,userId}){
             const templateParams = {
                 from_name: `👋 ${inputValue.name} ${inputValue.surname}`,
                 from_email: inputValue.email,
-                message: `Soy de ${inputValue.country} y mi consulta es... ${inputValue.message}`
+                message: `Hola mi consulta es... ${inputValue.message} y mi teléfono es ${inputValue.phone}`
             }
 
             emailjs.send(
