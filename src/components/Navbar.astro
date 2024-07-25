@@ -6,6 +6,7 @@
         <img src='./../../logo-archivos-gyg.webp' alt="logo-archivos-gyg" >
     </div>
     <div class="button_nav" >
+        <svg id="menu" width="50"  height="50"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>
         <a href="/"
            aria-label="Ir Home"
            >
@@ -39,6 +40,10 @@
         height: 100px;
         background-color: transparent;
     }
+    #menu{
+        display: none;
+        color: #425336;
+    }
     .button_nav{
         display: flex;
         align-items: center;
@@ -68,4 +73,10 @@
     img{
         height: 90px;
     }
+    @media
+        (width < 480px){
+            #menu{
+                display: flex;
+            }
+        }
 </style>
