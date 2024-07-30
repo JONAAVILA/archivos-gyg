@@ -1,30 +1,51 @@
 ---
 ---
+<script>
+    let tab = document.getElementById('tab')
+    let menu = document.getElementById('button_nav')
+
+    tab.addEventListener('click',
+        ()=>{
+            if(menu.style.height === "150px"){
+                return menu.style.height = "0"
+            }
+            return menu.style.height = "150px"
+        }
+    )
+</script>
 
 <section>
     <div>
         <img src='./../../logo-archivos-gyg.webp' alt="logo-archivos-gyg" >
     </div>
-    <div class="button_nav" >
-        <svg id="menu" width="50"  height="50"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>
-        <a href="/"
-           aria-label="Ir Home"
-           >
-           Home
-        </a>
-        <a href="/contacto"
-           aria-label="Ir Contacto"
-           >
-           Contact
-        </a>
-        <a class="whatsapp"
-           href="https://wa.link/m8iz7o"
-           target="_blank"
-           rel="noreferrer"
-           aria-label="Contáctanos por Whatsapp"
-           >
-           +54 9 11 6230-9102
-        </a>
+    <div>
+        <svg id="tab" width="50"  height="50"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>
+    </div>
+    <div class="button_nav" id="button_nav" >
+        <div>
+            <a href="/"
+               aria-label="Ir Home"
+               >
+               Home
+            </a>
+        </div>
+        <div>
+            <a href="/contacto"
+               aria-label="Ir Contacto"
+               >
+               Contact
+            </a>
+        </div>
+        <div>
+            <a class="whatsapp"
+               href="https://wa.link/m8iz7o"
+               target="_blank"
+               rel="noreferrer"
+               aria-label="Contáctanos por Whatsapp"
+               >
+               +54 9 11 6230-9102
+            </a>
+        </div>
     </div>
 </section>
 
@@ -75,8 +96,34 @@
     }
     @media
         (width < 480px){
+            section{
+                padding: 5px;
+            }
             #menu{
                 display: flex;
+            }
+            img{
+                height: 80px;
+            }
+            .button_nav{
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 0;
+                justify-content: center;
+                background-color: #fcb900;
+                overflow: hidden;
+                transition: all ease 200ms;
+                div{
+                    margin-top: 10px;
+                }
+            }
+            svg{
+                z-index: 10;
+                position: absolute;
+                right: 10px;
+                top: 25px;
             }
         }
 </style>
