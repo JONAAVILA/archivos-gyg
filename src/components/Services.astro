@@ -51,8 +51,7 @@
         </div>
     </article>
 </section>
-
-    
+  
 <style>
     section{
         display: flex;
@@ -66,7 +65,12 @@
     }
     article{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(300px,1fr)
+            )
+        ;
         margin-top: 30px;
         margin-bottom: 30px;
         width: 70%;
@@ -81,4 +85,13 @@
             }
         }
     }
+    @media
+        (width < 900px){
+            article{
+                width: 100%;
+            }
+            h2{
+                font-size: 1.8rem;
+            }
+        }
 </style>
