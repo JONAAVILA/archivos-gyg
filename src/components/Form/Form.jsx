@@ -100,7 +100,7 @@ export default function Form({servisId,templateId,userId}){
 
     return(
         <div>
-            <h2>Consultas</h2>
+            <h2 className='tittle_form' >Consultas</h2>
             {alert && <div className='alert' >
                         <p>{alert}</p>
                         <svg onClick={handleClose}

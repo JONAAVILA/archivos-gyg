@@ -83,3 +83,25 @@
         transform: rotate(45deg);
     }
 }
+
+@media
+    (width < 900px){
+        .tittle_form{
+            margin-left: 10px;
+        }
+        .form{
+            input{
+                width: 350px;
+            }
+            textarea{
+                min-width: 350px;
+                max-width: 350px;
+            }
+        }
+        .box_button{
+            width: 350px;
+        }
+        .alert{
+            width: 350px;
+        }
+    }
