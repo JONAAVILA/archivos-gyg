@@ -91,7 +91,7 @@ export default function Form({servisId,templateId,userId}){
                 phone:'',
                 message:''
             })
-        }else setAlert('¡Se requieren todos los campos o son inválidos!')
+        }else setAlert('Se requieren todos los campos o son inválidos')
     }
 
     const handleClose = ()=>{
